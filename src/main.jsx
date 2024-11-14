@@ -12,12 +12,14 @@ import Profile from './Pages/Profile.jsx';
 import Wishlist from './Pages/Wishlist.jsx';
 import Login from './Pages/Login.jsx';
 import ProtectedRoute from './components/ProtectedRoute';
+import Signup from './Pages/Signup.jsx';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path='/' element={<Layout />}>
         <Route path='login' element={<Login />} />
+        <Route path='signup' element={<Signup/>} />
         <Route 
           path='home' 
           element={
