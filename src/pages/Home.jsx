@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import placeholder from "../assets/placeholder.com-1280x720.webp";
 import "../style/home.css";
 import axios, { Axios } from "axios";
-import { BaseUrl, Byproducts, Bycategory } from "./../API/api.js";
 import Homeproduct from "./HomeProduct.jsx";
 
 export default function Home() {
@@ -13,7 +12,7 @@ export default function Home() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`${BaseUrl}${Byproducts}${Bycategory}`);
+      const response = await axios.get(`https://fakestoreapi.com/products/categories`);
       console.log(response.data);
       setData(response.data);
     } catch (error) {

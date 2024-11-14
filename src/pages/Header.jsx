@@ -14,10 +14,10 @@ export default function Header() {
           <Link to={'Home'}>Home</Link>
         </li>
         <li className=" text-black  hover:font-extrabold text2xl">
-          <Link to={'Allproducts'}>catogries</Link>
+          <Link to={'catogries'}>catogries</Link>
         </li>
         <li className=" text-black hover:font-extrabold text2xl">
-            <Link to={`catogries`}>Products </Link>
+            <Link to={`Allproducts`}>Products </Link>
         </li>
         <li className=" text-black hover:font-extrabold text2xl">
             <Link to={`profile`}>Profile</Link>
