@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from 'axios';
-import { baseUrl, createUser,loginuser } from '../Constant/api';
+import axios from "axios";
+import { baseUrl, createUser, loginuser } from "../Constant/api";
+import home from "./Home";
 
 const Login = () => {
   const {
@@ -11,24 +12,27 @@ const Login = () => {
     formState: { errors },
     getValues,
   } = useForm();
-  
 
   const navigate = useNavigate();
 
- const loginUsername=async(userData)=>{
- 
-  const data={
-    username:userData.username,
-    password:userData.password,
+  const loginUsername = async (userData) => {
+    const data = {
+      username: userData.username,
+      password: userData.password,
+    };
+    console.log(data);
+    const res = await axios.post(`${baseUrl}${loginuser}`, data);
+    console.log(res);
+    const token = res.data.token.access;
+    localStorage.setItem("access", token);
+    const access = localStorage.getItem("access");
 
-  }
-  console.log(data)
-  const res = await axios.post(`${baseUrl}${loginuser}`,data)
-  console.log(res)
-const token = res.data.token.access;
-localStorage.setItem("access",token)
- }
-
+   if(access!=null){
+    console.log("first")
+    navigate("/home")
+    console.log("second")
+      }
+  };
 
   return (
     <form action="" onSubmit={handleSubmit(loginUsername)}>
@@ -82,4 +86,4 @@ localStorage.setItem("access",token)
     </form>
   );
 };
-export default Login
+export default Login;

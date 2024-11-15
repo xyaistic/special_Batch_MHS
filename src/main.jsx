@@ -14,6 +14,7 @@ import Login from './Pages/Login.jsx';
 import ProtectedRoute from './components/ProtectedRoute';
 import Signup from './Pages/Signup.jsx';
 
+
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -23,49 +24,49 @@ const routes = createBrowserRouter(
         <Route 
           path='home' 
           element={
-            <ProtectedRoute>
+            // <ProtectedRoute>
               <Home />
-            </ProtectedRoute>
+            // </ProtectedRoute>
           } 
         />
         <Route 
           path='allproduct' 
           element={
-            <ProtectedRoute>
+            // <ProtectedRoute>
               <AllProduct />
-            </ProtectedRoute>
+            // </ProtectedRoute>
           } 
         />
         <Route 
           path='card' 
           element={
-            <ProtectedRoute>
+            // <ProtectedRoute>
               <Card />
-            </ProtectedRoute>
+            // </ProtectedRoute>
           } 
         />
         <Route 
           path='category' 
           element={
-            <ProtectedRoute>
+            // <ProtectedRoute>
               <Category />
-            </ProtectedRoute>
+            // </ProtectedRoute>
           } 
         />
         <Route 
           path='profile' 
           element={
-            <ProtectedRoute>
+            // <ProtectedRoute>
               <Profile />
-            </ProtectedRoute>
+            // </ProtectedRoute>
           } 
         />
         <Route 
           path='wishlist' 
           element={
-            <ProtectedRoute>
+            // <ProtectedRoute>
               <Wishlist />
-            </ProtectedRoute>
+            // </ProtectedRoute>
           } 
         />
       </Route>
