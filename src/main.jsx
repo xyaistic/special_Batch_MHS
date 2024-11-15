@@ -13,15 +13,17 @@ import Wishlist from './Pages/Wishlist.jsx';
 import Login from './Pages/Login.jsx';
 import ProtectedRoute from './components/ProtectedRoute';
 import Signup from './Pages/Signup.jsx';
+import SingleProduct from './Pages/SingleProduct.jsx';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path='/' element={<Layout />}>
+      <Route path='singleproduct' element={<SingleProduct/>}></Route>
         <Route path='login' element={<Login />} />
         <Route path='signup' element={<Signup/>} />
         <Route 
-          path='home' 
+          path='Home' 
           element={
             <ProtectedRoute>
               <Home />
@@ -29,7 +31,7 @@ const routes = createBrowserRouter(
           } 
         />
         <Route 
-          path='allproduct' 
+          path='Allproducts' 
           element={
             <ProtectedRoute>
               <AllProduct />
@@ -45,7 +47,7 @@ const routes = createBrowserRouter(
           } 
         />
         <Route 
-          path='category' 
+          path='catogries' 
           element={
             <ProtectedRoute>
               <Category />

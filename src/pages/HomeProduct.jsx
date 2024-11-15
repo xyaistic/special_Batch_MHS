@@ -6,7 +6,7 @@ export default function homeproduct({item}) {
   return (
     <>
   
-    <div className='border-2 border-black shadow-slate-600 shadow-lg rounded-lg  w-1/4 hover:border-4 '>
+    <div className='border-2 border-black shadow-slate-600 shadow-lg rounded-lg  w-1/4'>
 
 
      <img src={clothing} className='h-28 pl-4 ml-20 mt-4 ' alt="" />

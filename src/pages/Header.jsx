@@ -23,7 +23,7 @@ export default function Header() {
             <Link to={`profile`}>Profile</Link>
         </li>
         <li className="  p-2 text-black hover:font-extrabold text2xl">
-            <Link to={`cart`}><PiShoppingCartSimpleLight /></Link>
+            <Link to={`card`}><PiShoppingCartSimpleLight /></Link>
         </li> 
        
         <li className=" text-black  p-2 h-10 hover:font-extrabold text2xl">
