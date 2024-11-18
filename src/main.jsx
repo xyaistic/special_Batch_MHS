@@ -39,7 +39,7 @@ const routes = createBrowserRouter(
           } 
         />
         <Route 
-          path='card' 
+          path='cart' 
           element={
             <ProtectedRoute>
               <Card />
