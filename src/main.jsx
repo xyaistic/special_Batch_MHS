@@ -1,79 +1,83 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
-import App from './App.jsx';
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
-import Layout from './Pages/Layout.jsx';
-import Home from './Pages/Home.jsx';
-import AllProduct from './Pages/AllProduct.jsx';
-import Card from './Pages/Card.jsx';
-import Category from './Pages/Category.jsx';
-import Profile from './Pages/Profile.jsx';
-import Wishlist from './Pages/Wishlist.jsx';
-import Login from './Pages/Login.jsx';
-import ProtectedRoute from './components/ProtectedRoute';
-import Signup from './Pages/Signup.jsx';
-
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import Layout from "./Pages/Layout.jsx";
+import Home from "./Pages/Home.jsx";
+import AllProduct from "./Pages/AllProduct.jsx";
+import Card from "./Pages/Card.jsx";
+import Category from "./Pages/Category.jsx";
+import Profile from "./Pages/Profile.jsx";
+import Wishlist from "./Pages/Wishlist.jsx";
+import Login from "./Pages/Login.jsx";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Signup from "./Pages/Signup.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path='/' element={<Layout />}>
-        <Route path='login' element={<Login />} />
-        <Route path='signup' element={<Signup/>} />
-        <Route 
-          path='home' 
+      <Route path="/" element={<Layout />}>
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
+        <Route
+          path="home"
           element={
             // <ProtectedRoute>
-              <Home />
+            <Home />
             // </ProtectedRoute>
-          } 
+          }
         />
-        <Route 
-          path='allproduct' 
+        <Route
+          path="allproduct"
           element={
             // <ProtectedRoute>
-              <AllProduct />
+            <AllProduct />
             // </ProtectedRoute>
-          } 
+          }
         />
-        <Route 
-          path='card' 
+        <Route
+          path="card"
           element={
             // <ProtectedRoute>
-              <Card />
+            <Card />
             // </ProtectedRoute>
-          } 
+          }
         />
-        <Route 
-          path='category' 
+        <Route
+          path="category"
           element={
             // <ProtectedRoute>
-              <Category />
+            <Category />
             // </ProtectedRoute>
-          } 
+          }
         />
-        <Route 
-          path='profile' 
+        <Route
+          path="profile"
           element={
             // <ProtectedRoute>
-              <Profile />
+            <Profile />
             // </ProtectedRoute>
-          } 
+          }
         />
-        <Route 
-          path='wishlist' 
+        <Route
+          path="wishlist"
           element={
             // <ProtectedRoute>
-              <Wishlist />
+            <Wishlist />
             // </ProtectedRoute>
-          } 
+          }
         />
       </Route>
     </>
   )
 );
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <RouterProvider router={routes} />
 );
