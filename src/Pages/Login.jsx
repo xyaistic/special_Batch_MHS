@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate,Navigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { baseUrl, createUser, loginuser } from "../Constant/api";
 import home from "./Home";
+import { jwtDecode } from "jwt-decode";
 
 const Login = () => {
   const {
@@ -14,6 +15,9 @@ const Login = () => {
   } = useForm();
 
   const navigate = useNavigate();
+  const gotoSignUp = () => {
+    navigate("signup");
+  };
 
   const loginUsername = async (userData) => {
     const data = {
@@ -26,12 +30,13 @@ const Login = () => {
     const token = res.data.token.access;
     localStorage.setItem("access", token);
     const access = localStorage.getItem("access");
+    const decodedToken = jwtDecode(access);
+    localStorage.setItem("user_id", decodedToken.user_id);
+    const user_Id = localStorage.getItem("user_id");
 
-   if(access!=null){
-    console.log("first")
-    navigate("/home")
-    console.log("second")
-      }
+    if (access != null) {
+      navigate("/home");
+    }
   };
 
   return (
