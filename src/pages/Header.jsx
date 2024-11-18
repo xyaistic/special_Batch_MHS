@@ -1,37 +1,77 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { TiHeartOutline } from "react-icons/ti";
-import { PiShoppingCartSimpleLight } from "react-icons/pi";
-import '../index.css'  
-
-
+import React from 'react'
+import {Link} from "react-router-dom"
+// import logo from "../Img/logo.png"
+import { CiHeart } from "react-icons/ci";
+import { GiShoppingCart } from "react-icons/gi";
 export default function Header() {
-  return (
-    <div  className="flex justify-between   gap-x-10 pt-3 ">
-     <div>  
-      <ul  className=" text-md md:text-sm sm:text-sm flex  gap-x-10 p-50 " >
-        <li className=" text-black hover:font-extrabold text2xl">
-          <Link to={'Home'}>Home</Link>
-        </li>
-        <li className=" text-black  hover:font-extrabold text2xl">
-          <Link to={'catogries'}>catogries</Link>
-        </li>
-        <li className=" text-black hover:font-extrabold text2xl">
-            <Link to={`Allproducts`}>Products </Link>
-        </li>
-        <li className=" text-black hover:font-extrabold text2xl">
-            <Link to={`profile`}>Profile</Link>
-        </li>
-        <li className="  p-2 text-black hover:font-extrabold text2xl">
-            <Link to={`cart`}><PiShoppingCartSimpleLight /></Link>
-        </li> 
-       
-        <li className=" text-black  p-2 h-10 hover:font-extrabold text2xl">
-          <Link to={`wishlist`}><TiHeartOutline /></Link>
-        </li>
+  const access = localStorage.getItem("access");
+  const deleteToken=()=>{
+    localStorage.removeItem("access")
+    localStorage.removeItem("user_id")
+  }
 
-      </ul>
+  return (
+    <>
+      <div className="flex justify-end bg-blue-200 border border-5  items-center p-5">
+        {/* <img src={logo} alt="" className='h-10' /> */}
+        <ul className="flex justify-between gap-x-20">
+          <li className="hover:text-white text-xl ">
+            <Link to={`home`}>Home</Link>
+          </li>
+          <li className="hover:text-white text-xl">
+            <Link to={`Allproduct`}>All Product</Link>
+          </li>
+
+          <li className="hover:text-white text-xl">
+            <Link to={`category`}>Category</Link>
+          </li>
+          <li className="hover:text-white text-xl">
+            <Link to={`profile`}>Profile</Link>
+          </li>
+          <li className="hover:text-white">
+            <Link to={`card`}>
+              {" "}
+              <GiShoppingCart size={30} />
+            </Link>
+          </li>
+          <li className="hover:text-white  ">
+            <Link to={`wishlist`}>
+              <CiHeart size={30} />
+            </Link>
+          </li>
+
+          {access != null ? (
+            <>
+              <li className="hover:text-white text-xl" onClick={()=>deleteToken()}>
+                <Link to={`login`}>logOut</Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="hover:text-white text-xl">
+                <Link to={`login`}>login</Link>
+              </li>
+            </>
+          )}
+          {/*          
+        {
+        if(access!=null){
+            
+            <><li className='hover:text-white text-xl'>
+                <Link to={`login`}>logOut</Link>
+        </li></>
+        
+        }else{
+        
+            <><li className='hover:text-white text-xl'>
+                <Link to={`login`}>login</Link>
+        </li></>
+        
+        }
+            
+        }         */}
+        </ul>
       </div>
-    </div>
+    </>
   );
 }

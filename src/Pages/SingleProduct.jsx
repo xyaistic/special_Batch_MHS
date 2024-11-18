@@ -5,7 +5,7 @@ import { addItemTocard, BaseUrl } from '../API/api';
 
 export default function SingleProduct() {
         const [count , setCount] = useState(1);
-        const usereId = 1;
+        const usereId = localStorage.getItem("user_id");
 
     const QuantityAdd = () =>{
       if(data.stock>count){
