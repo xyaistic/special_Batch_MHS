@@ -27,8 +27,7 @@ export default function Catogries() {
     <div className='flex  justify-evenly'>
     {data.map((item)=>(
         <>
-       <Homeproduct item={item} />
-        
+       <Homeproduct item={item} />        
         </> 
        ))}
    

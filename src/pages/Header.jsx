@@ -22,8 +22,13 @@ export default function Header() {
         <li className='hover:text-white text-xl'>
             <Link to={`profile`}>Profile</Link>
         </li>
-        <li className='hover:text-white' >
-            <Link to={`card`}> <GiShoppingCart size={30}/></Link>
+
+        <li className="  p-2 text-black hover:font-extrabold text2xl">
+            <Link to={`card`}><PiShoppingCartSimpleLight /></Link>
+        </li> 
+       
+        <li className=" text-black  p-2 h-10 hover:font-extrabold text2xl">
+          <Link to={`wishlist`}><TiHeartOutline /></Link>
         </li>
         <li className='hover:text-white  '>
             <Link to={`wishlist`}><CiHeart size={30} /></Link>
