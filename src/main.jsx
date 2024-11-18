@@ -1,3 +1,4 @@
+
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
@@ -18,62 +19,63 @@ import SingleProduct from './Pages/SingleProduct.jsx';
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path='/' element={<Layout />}>
-      <Route path='singleproduct' element={<SingleProduct/>}></Route>
-        <Route path='login' element={<Login />} />
-        <Route path='signup' element={<Signup/>} />
-        <Route 
-          path='Home' 
+
+      <Route path="/" element={<Layout />}>
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
+        <Route
+          path="home"
           element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          } 
+            // <ProtectedRoute>
+            <Home />
+            // </ProtectedRoute>
+          }
         />
-        <Route 
-          path='Allproducts' 
+        <Route
+          path="allproduct"
           element={
-            <ProtectedRoute>
-              <AllProduct />
-            </ProtectedRoute>
-          } 
+            // <ProtectedRoute>
+            <AllProduct />
+            // </ProtectedRoute>
+          }
         />
-        <Route 
-          path='card' 
+        <Route
+          path="card"
           element={
-            <ProtectedRoute>
-              <Card />
-            </ProtectedRoute>
-          } 
+            // <ProtectedRoute>
+            <Card />
+            // </ProtectedRoute>
+          }
         />
-        <Route 
-          path='catogries' 
+        <Route
+          path="category"
           element={
-            <ProtectedRoute>
-              <Category />
-            </ProtectedRoute>
-          } 
+            // <ProtectedRoute>
+            <Category />
+            // </ProtectedRoute>
+          }
         />
-        <Route 
-          path='profile' 
+        <Route
+          path="profile"
           element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          } 
+            // <ProtectedRoute>
+            <Profile />
+            // </ProtectedRoute>
+          }
         />
-        <Route 
-          path='wishlist' 
+        <Route
+          path="wishlist"
           element={
-            <ProtectedRoute>
-              <Wishlist />
-            </ProtectedRoute>
-          } 
+            // <ProtectedRoute>
+            <Wishlist />
+            // </ProtectedRoute>
+          }
         />
       </Route>
     </>
   )
 );
+
 
 createRoot(document.getElementById('root')).render(
   <RouterProvider router={routes} />
