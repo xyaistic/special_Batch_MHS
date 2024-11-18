@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import {Link} from "react-router-dom"
 // import logo from "../Img/logo.png"
 import { CiHeart } from "react-icons/ci";
 import { GiShoppingCart } from "react-icons/gi";
